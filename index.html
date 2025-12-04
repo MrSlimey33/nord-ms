@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Welcome</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Login</h2>
-
-  <input id="email" placeholder="Email">
-  <input id="password" placeholder="Password" type="password">
-  <button id="loginBtn">Login</button>
-
-  <p>Don't have an account? <a href="register.html">Register</a></p>
-
-  <script type="module">
-    import { fb } from './firebase.js';
-
-    document.getElementById("loginBtn").onclick = async () => {
-      const emailValue = document.getElementById("email").value;
-      const passValue = document.getElementById("password").value;
-
-      try {
-        await fb.signIn(emailValue, passValue);
-        location.href = "chat.html";
-      } catch (e) {
-        alert(e.message);
-      }
-    };
-  </script>
+  <h1>Firebase Chat</h1>
+  <a href="login.html" class="button">Login</a>
+  <a href="register.html" class="button">Register</a>
 </body>
 </html>
